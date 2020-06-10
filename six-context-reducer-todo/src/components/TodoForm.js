@@ -13,9 +13,9 @@ const TodoForm = () => {
         e.preventDefault();
         if (todoString === "")
             return alert("Please enter a todo")
-
         const todo = {
-            todoString, id: v4()
+            todoString,
+            id: v4()
         }
         dispatch({
             type: ADD_TODO,
@@ -32,11 +32,11 @@ const TodoForm = () => {
                         type="text"
                         name="todo"
                         id="todo"
-                        placeholder="Your next todo"
+                        placeholder="Please write your next todo activity"
                         value={todoString}
                         onChange={e => setTodoString(e.target.value)}
                     />
-                    <InputGroupAddon addonType="prepend">
+                    <InputGroupAddon addonType="append">
                         <Button
                             color="warning" // TODO: onclick
                         > Add </Button>

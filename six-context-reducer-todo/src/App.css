@@ -8,18 +8,25 @@
 
 body {
   position: relative;
-  background-color: rgb(104, 104, 104);
+  background-color: rgb(120, 120, 120);
 }
+
+img.top-image {
+  display: block;
+  margin: 0 auto;
+}
+
 h1 {
   text-align: center;
   margin-top: 20px;
-  color: aliceblue;
+  color: #eee;
+  margin-bottom: 20px;
 }
+
 form {
-  position: fixed;
-  bottom: 500px;
-  right: 30%;
-  left: 30%;
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
   border-radius: 8px;
   border: 2px solid rgb(66, 66, 180);
   color: #000;
@@ -27,11 +34,14 @@ form {
 }
 
 .items {
-  position: fixed;
-  top: 50px;
-  right: 30%;
-  left: 30%;
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
   border-radius: 8px;
+}
+
+ul li {
+  padding: 5px;
 }
 
 .form-group {
