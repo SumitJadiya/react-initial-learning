@@ -5,8 +5,7 @@ import {
     InputGroup,
     InputGroupAddon,
     Button,
-    Form,
-    Container
+    Form
 } from "reactstrap"
 import { v4 } from "uuid"
 
@@ -24,8 +23,6 @@ const TodoForm = ({ addTodos }) => {
             id: v4()
         }
         addTodos(todo)
-
-        //TODO:
         setTodoString("")
     }
 
@@ -39,7 +36,7 @@ const TodoForm = ({ addTodos }) => {
                     </InputGroupAddon>
                 </InputGroup>
             </FormGroup>
-        </Form >
+        </Form>
     )
 }
 
