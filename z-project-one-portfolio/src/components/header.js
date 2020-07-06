@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from './nav';
 
 const Header = () => {
     return (
@@ -18,18 +19,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <nav className="nav-menu">
-                    <ul>
-                        <li className="active"><a href="index.html"><i className="bx bx-home"></i> <span>Home</span></a></li>
-                        <li><a href="#about"><i className="bx bx-user"></i> <span>About</span></a></li>
-                        <li><a href="#resume"><i className="bx bx-file-blank"></i> <span>Resume</span></a></li>
-                        <li><a href="#portfolio"><i className="bx bx-book-content"></i> Portfolio</a></li>
-                        <li><a href="#services"><i className="bx bx-server"></i> Services</a></li>
-                        <li><a href="#contact"><i className="bx bx-envelope"></i> Contact</a></li>
-
-                    </ul>
-                </nav>
-                <button type="button" className="mobile-nav-toggle d-xl-none"><i className="icofont-navigation-menu"></i></button>
+                <Nav />
             </div>
         </header>
     )
