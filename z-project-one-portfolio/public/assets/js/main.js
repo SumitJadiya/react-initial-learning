@@ -7,19 +7,6 @@
 !(function ($) {
   "use strict";
 
-  // Hero typed
-  if ($('.typed').length) {
-    var typed_strings = $(".typed").data('typed-items');
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .scrollto', function (e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -118,15 +105,6 @@
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 1000
-  });
-
-  // Skills section
-  $('.skills-content').waypoint(function () {
-    $('.progress .progress-bar').each(function () {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {
-    offset: '80%'
   });
 
   // Porfolio isotope and filter
