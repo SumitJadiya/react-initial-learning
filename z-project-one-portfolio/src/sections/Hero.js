@@ -1,4 +1,5 @@
 import React from 'react';
+import Typed from 'react-typed';
 
 const Hero = () => {
 
@@ -6,7 +7,24 @@ const Hero = () => {
         <section id="hero" className="d-flex flex-column justify-content-center align-items-center">
             <div className="hero-container" data-aos="fade-in">
                 <h1>Alex Smith</h1>
-                <p>I'm <span className="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+                <br />
+
+                <p>I'm &nbsp;
+                    <Typed className="typed"
+                        strings={[
+                            'Designer',
+                            'Freelancer',
+                            'Photographer',
+                            'Developer']}
+
+                        backDelay={2000}
+                        typeSpeed={100}
+                        backSpeed={50}
+                        showCursor
+                        shuffle
+                        loop >
+                    </Typed>
+                </p>
             </div>
         </section>
     )

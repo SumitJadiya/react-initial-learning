@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <header id="header">
-            <div class="d-flex flex-column">
+            <div className="d-flex flex-column">
 
                 <div className="d-flex flex-column">
                     <div className="profile">
@@ -18,18 +18,18 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <nav class="nav-menu">
+                <nav className="nav-menu">
                     <ul>
-                        <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                        <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-                        <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-                        <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
-                        <li><a href="#services"><i class="bx bx-server"></i> Services</a></li>
-                        <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+                        <li className="active"><a href="index.html"><i className="bx bx-home"></i> <span>Home</span></a></li>
+                        <li><a href="#about"><i className="bx bx-user"></i> <span>About</span></a></li>
+                        <li><a href="#resume"><i className="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                        <li><a href="#portfolio"><i className="bx bx-book-content"></i> Portfolio</a></li>
+                        <li><a href="#services"><i className="bx bx-server"></i> Services</a></li>
+                        <li><a href="#contact"><i className="bx bx-envelope"></i> Contact</a></li>
 
                     </ul>
                 </nav>
-                <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+                <button type="button" className="mobile-nav-toggle d-xl-none"><i className="icofont-navigation-menu"></i></button>
             </div>
         </header>
     )
