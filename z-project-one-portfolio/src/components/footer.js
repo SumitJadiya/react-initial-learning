@@ -16,7 +16,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <Link onClick={scrollToTop} className="back-to-top"><i className="icofont-simple-up"></i></Link>
+            <Link to="hero" onClick={scrollToTop} className="back-to-top"><i className="icofont-simple-up"></i></Link>
         </>
     )
 }
