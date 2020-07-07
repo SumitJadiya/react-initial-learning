@@ -4,6 +4,7 @@ import TitleBlock from "../blocks/TitleBlock";
 import { Container } from "reactstrap"
 import TestimonialBlock from "../blocks/TestimonialBlock";
 
+//TODO: Fix the bug - first testimonial is empty
 const Testimonials = () => {
 
     const [testimonial, setTestimonial] = useState([])
@@ -15,10 +16,8 @@ const Testimonials = () => {
     useEffect(() => {
         fetchTestimonials()
     }, [])
-    console.log(testimonial)
 
     return (
-
         <section id="testimonials" className="testimonials section-bg">
             <Container>
                 <TitleBlock data={data.heading} />
