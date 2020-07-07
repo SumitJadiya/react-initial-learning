@@ -10,7 +10,6 @@ const Testimonials = () => {
 
     const fetchTestimonials = () => (
         setTestimonial(data.body.data)
-
     )
 
     useEffect(() => {
