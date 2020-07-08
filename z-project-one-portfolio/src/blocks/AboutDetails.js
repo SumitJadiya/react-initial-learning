@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AboutDetails = ({ detail, min, max }) => {
+    console.log(detail)
     return (
         <div className="col-lg-6">
             <ul>
