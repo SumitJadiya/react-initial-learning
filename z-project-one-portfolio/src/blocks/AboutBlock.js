@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import AboutDetails from './AboutDetails';
 
 const AboutBlock = ({ data }) => {
-    const [detail, setDetail] = useState([])
-
-    const fetchAboutData = () => {
-        setDetail(data.details)
-    }
-
-    useEffect(() => {
-        fetchAboutData()
-    }, [])
 
     return (
         <div className="row">
@@ -23,8 +14,8 @@ const AboutBlock = ({ data }) => {
                     {data.shortDescription}
                 </p>
                 <div className="row">
-                    <AboutDetails detail={detail} min={0} max={4} />
-                    <AboutDetails detail={detail} min={4} max={8} />
+                    <AboutDetails detail={data.details} min={0} max={4} />
+                    <AboutDetails detail={data.details} min={4} max={8} />
                 </div>
                 <p>
                     {data.longDescription}
