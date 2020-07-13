@@ -26,4 +26,3 @@ const AboutBlock = ({ data }) => {
 }
 
 export default AboutBlock
-
