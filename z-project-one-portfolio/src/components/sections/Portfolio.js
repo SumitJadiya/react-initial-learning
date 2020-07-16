@@ -1,14 +1,12 @@
 import React from 'react';
 import data from "../data/PORTFOLIO.json"
+import TitleBlock from '../blocks/TitleBlock';
 
 const Portfolio = () => (
     <section id="portfolio" className="portfolio section-bg">
         <div className="container">
 
-            <div className="section-title">
-                <h2>{data.heading.title}</h2>
-                <p>{data.heading.description}</p>
-            </div>
+            <TitleBlock data={data.heading} />
 
             <div className="row" data-aos="fade-up">
                 <div className="col-lg-12 d-flex justify-content-center">

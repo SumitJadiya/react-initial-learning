@@ -1,16 +1,13 @@
 import React from 'react';
 import data from "../data/CONTACT.json"
+import TitleBlock from '../blocks/TitleBlock';
 
 const Contact = () => {
 
     return (
         <section id="contact" className="contact">
             <div className="container">
-
-                <div className="section-title">
-                    <h2>{data.heading.title}</h2>
-                    <p>{data.heading.description}</p>
-                </div>
+                <TitleBlock data={data.heading} />
 
                 <div className="row" data-aos="fade-in">
                     <div className="col-lg-5 d-flex align-items-stretch">

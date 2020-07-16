@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import data from "../data/FACTS.json"
+import TitleBlock from '../blocks/TitleBlock';
 
 const Facts = () => {
 
@@ -12,12 +13,7 @@ const Facts = () => {
     return (
         <section id="facts" className="facts">
             <div className="container">
-
-                <div className="section-title">
-                    <h2>{data.heading.title}</h2>
-                    <p>{data.heading.description}</p>
-                </div>
-
+                <TitleBlock data={data.heading} />
                 <div className="row no-gutters">
                     {body.map(content => (
                         <div key={content.index} className="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
@@ -28,9 +24,7 @@ const Facts = () => {
                             </div>
                         </div>
                     ))}
-
                 </div>
-
             </div>
         </section>
     )
