@@ -1,0 +1,26 @@
+{
+  "heading": {
+    "title": "Contact",
+    "description": "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas."
+  },
+  "body": [
+    {
+      "index": "1",
+      "icon": "icofont-google-map",
+      "key": "Location",
+      "value": "A108 Adam Street, New York, NY 535022"
+    },
+    {
+      "index": "2",
+      "icon": "icofont-envelope",
+      "key": "Email",
+      "value": "info@example.com"
+    },
+    {
+      "index": "3",
+      "icon": "icofont-phone",
+      "key": "Call",
+      "value": "+1 5589 55488 55s"
+    }
+  ]
+}
