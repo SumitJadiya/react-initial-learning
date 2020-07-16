@@ -1,4 +1,5 @@
 import React from 'react';
+import data from "../data/CONTACT.json"
 
 const Contact = () => {
 
@@ -7,32 +8,24 @@ const Contact = () => {
             <div className="container">
 
                 <div className="section-title">
-                    <h2>Contact</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>{data.heading.title}</h2>
+                    <p>{data.heading.description}</p>
                 </div>
 
                 <div className="row" data-aos="fade-in">
-
                     <div className="col-lg-5 d-flex align-items-stretch">
                         <div className="info">
-                            <div className="address">
-                                <i className="icofont-google-map"></i>
-                                <h4>Location:</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
-                            </div>
 
-                            <div className="email">
-                                <i className="icofont-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>info@example.com</p>
-                            </div>
+                            {data.body.map(val => (
+                                <div key={val.index} className="address">
+                                    <i className={val.icon}></i>
+                                    <h4>{val.key}:</h4>
+                                    <p>{val.value}</p>
+                                </div>
 
-                            <div className="phone">
-                                <i className="icofont-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+1 5589 55488 55s</p>
-                            </div>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.4201133760166!2d73.92422551544605!3d18.50990797432983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1f2ff6f7bbf%3A0xfdb92164ecdd86eb!2sGrevillea!5e0!3m2!1sen!2sin!4v1593956697192!5m2!1sen!2sin" style={{ border: "0px", width: "100%", height: "290px" }} title="contact" frameBorder="0" allowFullScreen aria-hidden="false" ></iframe>
+                            ))}
+
+                            <iframe src={data.location} style={{ border: "0px", width: "100%", height: "290px" }} title="contact" frameBorder="0" allowFullScreen aria-hidden="false" ></iframe>
 
                         </div>
 
