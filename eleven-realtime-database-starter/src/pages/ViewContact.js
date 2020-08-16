@@ -13,7 +13,7 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { ContactContext } from "../context/Context";
 
 const ViewContact = () => {
-  const { state } = useContext(ContactContext);
+  const { contact } = useContext(ContactContext);
   // destructuring contact from the state
   // and rendering it in state
   //FIXME: destructure contact from state
@@ -24,6 +24,7 @@ const ViewContact = () => {
           <Card className="pt-3 pb-5">
             <CardBody className="text-center ">
               <img
+                alt={contact?.picture}
                 height="150"
                 width="150"
                 className="cardImg profile border-danger"
@@ -41,6 +42,7 @@ const ViewContact = () => {
               <a
                 className="btn btn-primary btn-block"
                 target="_blank"
+                rel="noopener noreferrer"
                 href={`mailto:{contact?.email}`}
               >
                 <FaEnvelope className="icon mr-2" />
@@ -50,7 +52,7 @@ const ViewContact = () => {
               <a
                 className="btn btn-primary btn-block"
                 target="_blank"
-                //TODO: add google maps
+              //TODO: add google maps
               >
                 <FaMapMarkerAlt className="icon mr-2" />
                 {contact?.address}

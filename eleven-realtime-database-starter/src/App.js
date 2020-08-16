@@ -15,6 +15,8 @@ import "./App.css";
 
 // firebase stuffs
 //TODO: import firebase config and firebase database
+import firebase from "firebase/app"
+import firebaseConfig from './utils/config';
 
 // components
 import AddContact from "./pages/AddContact";
@@ -25,10 +27,12 @@ import ViewContact from "./pages/ViewContact";
 import PageNotFound from "./pages/PageNotFound";
 
 // context api stuffs
-//TODO: import reducers and contexts
+import reducer from "./context/reducer"
+import { ContactContext } from "./context/Context"
 
 //initlizeing firebase app with the firebase config which are in ./utils/firebaseConfig
-//TODO: initialize FIREBASE
+firebase.initializeApp(firebaseConfig)
+
 
 // first state to provide in react reducer
 const initialState = {
