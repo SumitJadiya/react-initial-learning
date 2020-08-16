@@ -26,22 +26,47 @@ const Contact = ({ contact, contactKey }) => {
 
   // to delete the contact when delete contact is clicked
   const deleteContact = () => {
-    //TODO: create this method from firebase
-
+    //TODO: create this method from firebase -> Done
+    database
+      .ref(`contacts/${contactKey}`)
+      .remove()
+      .then(
+        () => { toast("delete successful", { type: 'success' }) }
+      )
+      .catch(
+        error => { toast("error" + error, { type: 'error' }) }
+      )
   };
 
   // update the star/important contact ,ie, star it or unstar the single contact
   const updateImpContact = () => {
-    //TODO: update (star) contact, use contactKey
+    //TODO: update (star) contact, use contactKey -> done
+    database
+      .ref(`contacts/${contactKey}`)
+      .update(
+        {
+          star: !contact.star
+        },
+        err => {
+          console.log(err)
+        }
+      )
+      .then(
+        () => { toast("successful", { type: 'success' }) }
+      )
+      .catch(
+        error => { toast("error" + error, { type: 'error' }) }
+      )
   };
 
   // when the update icon/ pen ion is clicked
   const updateContact = () => {
     // dispatching one action to update contact
-    //TODO: use dispatch to update
+    //TODO: use dispatch to update -> done
     dispatch({
       type: CONTACT_TO_UPDATE,
-
+      payload: contact,
+      key: contactKey
     })
 
     // and pushing to the add contact screen
@@ -51,7 +76,7 @@ const Contact = ({ contact, contactKey }) => {
   // to view a single contact in the contact/view screen
   const viewSingleContact = contact => {
     // setting single contact in state
-    //TODO: use dispatch to view single contact
+    //TODO: use dispatch to view single contact -> done
     dispatch({
       type: SET_SINGLE_CONTACT,
       payload: contact

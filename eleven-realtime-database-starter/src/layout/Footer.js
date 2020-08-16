@@ -1,4 +1,4 @@
-//TODO: Export the Footer
+//TODO: Export the Footer -> Done
 import React from "react";
 
 const Footer = () => {

@@ -1,5 +1,5 @@
 //TODO: add firebase configuration and export it
-export default {
+export const firebaseConfig = {
   apiKey: "AIzaSyCHJG-p9evhcYK61a8hDIoUdQc6h0D9OIs",
   authDomain: "mygitapp-2b2db.firebaseapp.com",
   databaseURL: "https://mygitapp-2b2db.firebaseio.com",

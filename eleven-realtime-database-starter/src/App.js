@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 
-import { Container, Col, Row } from "reactstrap";
+import { Container } from "reactstrap";
 
 // react-router-dom3
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -14,9 +14,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 // firebase stuffs
-//TODO: import firebase config and firebase database
+//TODO: import firebase config and firebase database -> done
 import firebase from "firebase/app"
-import firebaseConfig from './utils/config';
+import { firebaseConfig } from './utils/config';
+import "firebase/database"
+import "firebase/storage"
 
 // components
 import AddContact from "./pages/AddContact";
@@ -29,10 +31,10 @@ import PageNotFound from "./pages/PageNotFound";
 // context api stuffs
 import reducer from "./context/reducer"
 import { ContactContext } from "./context/Context"
+import { SET_CONTACT, SET_LOADING } from "./context/action.types"
 
 //initlizeing firebase app with the firebase config which are in ./utils/firebaseConfig
 firebase.initializeApp(firebaseConfig)
-
 
 // first state to provide in react reducer
 const initialState = {
@@ -49,17 +51,35 @@ const App = () => {
   // will get contacts from firebase and set it on state contacts array
   const getContacts = async () => {
     // TODO: load existing data
+    dispatch({
+      type: SET_LOADING,
+      isLoading: true
+    })
+
+    const contactRef = await firebase.database().ref('/contacts')
+    contactRef.on('value', snapshot => {
+      dispatch({
+        type: SET_CONTACT,
+        payload: snapshot.val()
+      })
+
+      dispatch({
+        type: SET_LOADING,
+        isLoading: false
+      })
+    })
   };
 
   // getting contact  when component did mount
   useEffect(() => {
-    //FIXME: call methods if needed
+    //FIXME: call methods if needed -> done
+    getContacts()
   }, []);
 
   return (
     <Router>
-      {/* FIXME: Provider is not configured */}
-      <ContactContext.Provider>
+      {/* FIXME: Provider is not configured -> done*/}
+      <ContactContext.Provider value={{ state, dispatch }}>
         <ToastContainer />
         <Header />
         <Container>
