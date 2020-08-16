@@ -1,4 +1,4 @@
-//TODO: create contact using all actions
+//TODO: create contact using all actions -> Done
 
 import {
   SET_CONTACT,
@@ -7,18 +7,34 @@ import {
   SET_SINGLE_CONTACT
 } from "./action.types";
 
-//TODO: use switch case
+//TODO: use switch case -> Done
 export default (state, action) => {
   switch (action.type) {
     case SET_CONTACT:
-      break;
+      return action.payload === null ? {
+        ...state,
+        contacts: []
+      } : {
+          ...state,
+          contacts: action.payload
+        }
     case SET_LOADING:
-      break;
+      return {
+        ...state,
+        isLoading: action.payload
+      }
     case CONTACT_TO_UPDATE:
-      break;
+      return {
+        ...state,
+        contactToUpdate: action.payload,
+        contactToUpdateKey: action.key
+      }
     case SET_SINGLE_CONTACT:
-      break;
+      return {
+        ...state,
+        contact: action.payload
+      }
     default:
-      break;
+      return state;
   }
 }
